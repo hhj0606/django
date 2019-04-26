@@ -1,0 +1,62 @@
+<style type="text/css">
+    .neirong{
+            border-bottom: 3px solid #e5e5e5;
+            font-size: 20px;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            margin-right:80px;
+        }
+    .top{
+            height: 50px;
+            width:100%;
+            background:black;
+            position: fixed;
+            top: 0;
+        }
+    .top ul{          
+            width: 80%;
+            list-style-type: none;
+            margin: 0;            
+            padding: 0;
+            overflow: hidden;
+        }
+    .top li {    
+            list-style: disc;
+	        font-size: 17px;
+            float: left;
+	        line-height: 1.59;
+            margin-right:50px;
+        }
+
+    .top li a{
+            display: block;
+            color:white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    .top li a:hover{
+            background-color: red;
+        }
+</style>
+<body>
+    <div class="top">
+        <ul >
+            <li><a href="/web1">豆瓣图书TOP250</a></li>
+            <li><a href="/web2">京东商品</a></li>           
+        </ul>
+    </div>
+    <div style="margin-top: 50px;">
+        {% for db in db_list %}
+            <div class="neirong">
+                <h2>书名：{{ db.name }}</h2>
+                <p>作者：{{ db.author}}</p>
+                <p>出版社：{{ db.chubanshe }}</p>
+                <p>出版日期：{{ db.riqi}}</p>
+                <p>价格：{{ db.jiage }}</p>
+                <p>评分：{{ db.pingfen}}</p>
+                <p>内容：{{ db.jianjie }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
